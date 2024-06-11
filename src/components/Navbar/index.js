@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { withRouter } from "react-router-dom/cjs/react-router-dom.min";
+import Cookies from 'js-cookie'
 import './index.css'
 import letterM from '../../letterM.jpeg'
 import { IoIosLogOut } from "react-icons/io";
@@ -7,7 +8,7 @@ import { IoIosLogOut } from "react-icons/io";
 class Navbar extends Component{
 
     onLogout = ()=>{
-        localStorage.setItem('isLoggedIn',false)
+       Cookies.remove('user_cookie')
         this.props.history.replace('/login')
     }
 

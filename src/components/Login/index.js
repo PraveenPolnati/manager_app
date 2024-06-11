@@ -1,4 +1,5 @@
 import { Component } from "react";
+import Cookies from 'js-cookie'
 import bcrypt from 'bcryptjs'
 import {Circles} from 'react-loader-spinner'
 import './index.css'
@@ -6,7 +7,7 @@ import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 
 class Login extends Component{
 
-    state = {loginUserName:'',loginPassword:'',errorMsg:'',isError:false,usersList:[],isLoading:true,isLoggedIn:false}
+    state = {loginUserName:'',loginPassword:'',errorMsg:'',isError:false,usersList:[],isLoading:true}
 
     componentDidMount(){
         const userLoginDetails = JSON.parse(localStorage.getItem('userLoginDetails'))
@@ -14,10 +15,7 @@ class Login extends Component{
             const {usersList} = userLoginDetails
             this.setState({usersList})
         }
-        const isLoggedIn = localStorage.getItem('isLoggedIn')
-        if(isLoggedIn){
-            this.setState({isLoggedIn})
-        }
+
         setTimeout(
             ()=>{
                 this.setState({isLoading:false})
@@ -50,7 +48,8 @@ class Login extends Component{
 
         if (isPasswordMatch) {
             this.setState({ errorMsg: '', isError: false });
-            localStorage.setItem('isLoggedIn',true)
+            const token = user.password
+            Cookies.set('user_cookie',token,{expires:30,path:'/'})
             this.props.history.replace('/');
         } else {
             this.setState({ errorMsg: 'Password incorrect', isError: true });
@@ -61,8 +60,9 @@ class Login extends Component{
 };
 
     render(){
-        const{loginPassword,errorMsg,isError,isLoading,isLoggedIn} = this.state
-        if(isLoggedIn==='true'){
+        const{loginPassword,errorMsg,isError,isLoading} = this.state
+        const cookie = Cookies.get('user_cookie')
+        if(cookie){
             return <Redirect to='/'/>
         }
         return(
