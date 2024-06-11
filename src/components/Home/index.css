@@ -1,0 +1,124 @@
+.homeContainer{
+    min-height: 100vh;
+    height: 100%;
+    width: 100vw;
+    background-color: #abd4fa68;
+}
+.homeCard{
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loaderCard{
+    display: flex;
+    min-height: 80vh;
+    height: 100%;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+}
+.managerCard{
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.sortingCard{
+    align-self: flex-start;
+    margin: 50px;
+    width: 90vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.sortingEle{
+    width: 100px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 0px;
+    outline: none;
+    background-color: #abd4fa68;
+}
+.sortingEle:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: .6s;
+}
+.taskSearch{
+    width: 50vw;
+    border: 0px;
+    outline: none;
+    height: 40px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: transparent;
+}
+.searchCard{
+    display: flex;
+    align-items: center;
+    border: 1px solid gray;
+    margin-left: 30px;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+.actionsCard{
+    display: flex;
+    align-items: center;
+}
+.newTask{
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    border: 0px;
+    outline: none;
+    background-color: rgba(0, 153, 255, 0.267);
+    cursor: pointer;
+}
+.newTask:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: 0.5s;
+}
+
+@media screen and (max-width:450px) {
+    .smallSortingCard{
+        display:flex;
+        flex-direction:column;
+        width: 60vw;
+        padding: 20px;
+    }
+    .newTask{
+        margin-top: 30px;
+    }
+}
+
+.newTaskCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40vw;
+    height: 200px;
+    margin-bottom: 20px;
+}
+.taskName{
+    height: 30px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+.saveBtn{
+    width: 100px;
+    height: 40px;
+    border: 0px;
+    outline: none;
+    border-radius: 10px;
+    background-color: rgb(126, 178, 245);
+    cursor: pointer;
+}
+.saveBtn:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: 0.5s;
+}

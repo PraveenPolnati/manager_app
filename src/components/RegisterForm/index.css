@@ -1,0 +1,49 @@
+.registerBgContainer{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #abd4fa68;
+    font-family: 'Courier New', Courier, monospace;
+}
+.regesterCard{
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 30px;
+    border-radius: 10px;
+    width: 30vw;
+    font-weight: bold;
+}
+.registerBtn{
+    margin-top: 30px;
+    border-radius: 10px;
+    border: 0px;
+    outline: none;
+    height: 5vh;
+    background-color: #00ffff8b;
+    cursor: pointer;
+    width: 80px;
+    margin-left: 20px;
+}
+
+.registerBtn:hover ,.inputEle:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: .5s;
+}
+
+.inputEle{
+    height: 4vh;
+    border-radius: 10px;
+    border: 0px;
+    outline: none;
+    padding: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.labelEle{
+    font-size: large;
+    font-family: 'Roboto';
+}

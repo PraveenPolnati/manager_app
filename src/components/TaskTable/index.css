@@ -1,0 +1,53 @@
+.tabelcard{
+    height: 600px;
+    overflow: auto;
+    margin: 10px;
+    background-color: transparent;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}::-webkit-scrollbar {
+    width: 0px;
+  }
+.taskTable{
+    border-collapse: collapse;
+    width: 80vw;
+    text-align: center;
+}
+.taskTable tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+.headerCell {
+    padding: 12px;
+    width: 200px;
+    background-color: rgba(0, 200, 255, 0.269);
+}
+.dataCell{
+    padding: 12px;
+    width: 200px;
+    background-color: rgba(0, 200, 255, 0.098);
+    text-align: left;
+    text-align: center;
+}
+td:hover{
+    transition: .5s;
+    background-color: rgba(73, 118, 149, 0.441);
+}
+.deleteBtn{
+    background-color: transparent;
+    border: 0px;
+    outline: none;
+    text-decoration: underline;
+    color: red;
+    cursor: pointer;
+    margin-left: 20px;
+    width: 80px;
+    height: 30px;
+}
+.EditSaveBtn{
+    border: 0px;
+    outline: none;
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: aquamarine;
+    cursor: pointer;
+}

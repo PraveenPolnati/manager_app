@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { Component } from "react";
+import { Switch,Route,BrowserRouter } from "react-router-dom/cjs/react-router-dom.min";
+import './index.css'
+import RegisterForm from "./components/RegisterForm";
+import Login from "./components/Login";
+import ProtectedRoute from "./components/ProtectedRoute";
+import Home from "./components/Home";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component{
+
+  render(){
+    return(
+        <BrowserRouter>
+            <Switch>
+                <Route exact path='/register' component={RegisterForm}/>
+                <Route exact path='/login' component={Login}/>
+                <ProtectedRoute exact path='/home' component={Home}/>
+            </Switch>
+        </BrowserRouter>
+    )
+  }
 }
 
-export default App;
+export default App
