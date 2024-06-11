@@ -51,7 +51,7 @@ class Login extends Component{
         if (isPasswordMatch) {
             this.setState({ errorMsg: '', isError: false });
             localStorage.setItem('isLoggedIn',true)
-            this.props.history.replace('/home');
+            this.props.history.replace('/');
         } else {
             this.setState({ errorMsg: 'Password incorrect', isError: true });
         }
@@ -63,7 +63,7 @@ class Login extends Component{
     render(){
         const{loginPassword,errorMsg,isError,isLoading,isLoggedIn} = this.state
         if(isLoggedIn==='true'){
-            return <Redirect to='/home'/>
+            return <Redirect to='/'/>
         }
         return(
             <form onSubmit={this.onLogin} className="loginBgContainer">

@@ -14,7 +14,7 @@ class App extends Component{
             <Switch>
                 <Route exact path='/register' component={RegisterForm}/>
                 <Route exact path='/login' component={Login}/>
-                <ProtectedRoute exact path='/home' component={Home}/>
+                <ProtectedRoute exact path='/' component={Home}/>
             </Switch>
         </BrowserRouter>
     )
