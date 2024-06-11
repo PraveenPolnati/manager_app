@@ -18,7 +18,7 @@ class RegisterForm extends Component {
       this.setState({ usersList: userLoginDetails.usersList });
     }
     setTimeout(()=>{
-      this.setState({isLoading:false})},300)
+      this.setState({isLoading:false})},100)
   }
 
   componentDidUpdate(prevProps, prevState) {

@@ -22,7 +22,7 @@ class Login extends Component{
             ()=>{
                 this.setState({isLoading:false})
             },
-        400)
+        100)
     }
 
     onChangeUserName = (event)=>{
