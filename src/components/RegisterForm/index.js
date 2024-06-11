@@ -83,7 +83,7 @@ class RegisterForm extends Component {
             <br />
             <label htmlFor="password" className="labelEle">Create password</label>
             <input autoComplete="off" onChange={this.onChangePassword} className="inputEle" placeholder="Enter Password Here" id="password" type="password" />
-            {isError && <p>{errorMsg}</p>}
+            {isError && <p className="registerError">{`*${errorMsg}`}</p>}
             <div>
               <button type="submit" className="registerBtn">Register</button>
               <button onClick={this.onClickLogin} type="button" className="registerBtn">Login</button>

@@ -77,7 +77,7 @@ class Login extends Component{
                     <label id='2' className="labelEle" htmlFor="loginPassword">Password</label>
                     <input autoComplete={loginPassword}  placeholder="Enter Password" onChange={this.onChangePassword} className="inputEle" id='className="labelEle' type="password"/>
                     <br/>
-                    {isError && <p>{errorMsg}</p>}
+                    {isError && <p className="loginError">{`*${errorMsg}`}</p>}
                     <div>
                         <button type="submit" className="loginBtn">Login</button>
                         <button  onClick={this.onClickRegister} type="button" className="loginBtn">Register</button>

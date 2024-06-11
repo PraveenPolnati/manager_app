@@ -17,7 +17,8 @@ class Home extends Component {
         description: '',
         editableTaskId: null,
         editedName: '',
-        editedDescription: ''
+        editedDescription: '',
+        isError:false
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -93,12 +94,19 @@ class Home extends Component {
             this.setState({ isLoading: false });
         }, 100);
         const { taskName, description } = this.state;
-        const newTask = { id: uuidv4(), name: taskName, description };
-        this.setState(prevState => ({
-            taskList: [...prevState.taskList, newTask].sort((a, b) => a.name.localeCompare(b.name)),
-            filterList: [...prevState.taskList, newTask].sort((a, b) => a.name.localeCompare(b.name)),
-            isNewtask: false
-        }));
+        if (taskName ==='' || description === ""){
+            this.setState({isError:true})
+        }else{
+            const newTask = { id: uuidv4(), name: taskName, description };
+            this.setState(prevState => ({
+                taskList: [...prevState.taskList, newTask].sort((a, b) => a.name.localeCompare(b.name)),
+                filterList: [...prevState.taskList, newTask].sort((a, b) => a.name.localeCompare(b.name)),
+                isNewtask: false,
+                isError:false,
+                taskName:'',
+                description:''
+            }));
+        }
     }
 
     onEnterTaskName = (event) => {
@@ -144,8 +152,16 @@ class Home extends Component {
         });
     }
 
+    onDiscard = ()=>{
+        this.setState({ isLoading: true });
+        setTimeout(() => {
+            this.setState({ isLoading: false });
+        }, 100);
+        this.setState({ isNewtask: false });
+    }
+
     render() {
-        const { isLoading, filterList, isNewtask, editableTaskId, editedName, editedDescription } = this.state;
+        const { isLoading, filterList, isNewtask, editableTaskId, editedName, editedDescription,isError } = this.state;
         return (
             <div className="homeContainer">
                 <Navbar />
@@ -173,7 +189,11 @@ class Home extends Component {
                                 <input onChange={this.onEnterTaskName} placeholder="Enter Name" className="taskName" id='taskname' type="text"/>
                                 <label htmlFor="description">Description</label>
                                 <input onChange={this.onEnterDescription} placeholder="Enter Description" className="taskName" id="description" type="text"/>
-                                <button onClick={this.onSave} className="saveBtn" type="button">save</button>
+                                {isError && <p className="taskError">*name & description not to be empty</p>}
+                                <div className="saveDiscard">
+                                    <button onClick={this.onSave} className="saveBtn" type="button">save</button>
+                                    <button onClick={this.onDiscard} className="discardBtn" type="button">Discard</button>
+                                </div>
                             </div>}
                             <TaskTable
                                 filterList={filterList}

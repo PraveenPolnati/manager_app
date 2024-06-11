@@ -47,3 +47,6 @@
     font-size: large;
     font-family: 'Roboto';
 }
+.registerError{
+    color: red;
+}

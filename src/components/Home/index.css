@@ -92,6 +92,15 @@
     .newTask{
         margin-top: 30px;
     }
+    .discardBtn{
+        margin-top: 10px;
+        margin-left: -30px;
+    }
+    .saveDiscard{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .newTaskCard{
@@ -99,7 +108,7 @@
     flex-direction: column;
     justify-content: center;
     width: 40vw;
-    height: 200px;
+    height: 250px;
     margin-bottom: 20px;
 }
 .taskName{
@@ -107,6 +116,7 @@
     border: 1px solid gray;
     border-radius: 10px;
     margin-bottom: 10px;
+    margin-top: 10px;
     padding: 10px;
 }
 .saveBtn{
@@ -118,7 +128,21 @@
     background-color: rgb(126, 178, 245);
     cursor: pointer;
 }
-.saveBtn:hover{
+.discardBtn{
+    color: red;
+    width: 100px;
+    height: 40px;
+    border: 1px solid red;
+    outline: none;
+    border-radius: 10px;
+    background-color: transparent;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.saveBtn:hover,.discardBtn:hover{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     transition: 0.5s;
+}
+.taskError{
+    color: red;
 }
